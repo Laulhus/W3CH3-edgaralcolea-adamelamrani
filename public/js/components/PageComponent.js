@@ -10,7 +10,7 @@ export default class PageComponent extends Component {
     super(parentElement, "main", "main");
 
     this.generateHTML();
-    this.renderSeries();
+    this.renderPendingSeries();
   }
 
   generateHTML() {
@@ -35,7 +35,7 @@ export default class PageComponent extends Component {
       </main>`;
   }
 
-  renderSeries(pendingSeries) {
+  renderPendingSeries(pendingSeries) {
     this.pendingSeries.forEach((serie) => {
       const showCard = new CardComponent(
         this.element.querySelector(".series-list"),
@@ -43,17 +43,37 @@ export default class PageComponent extends Component {
         "li",
         serie
       );
-      const showScore = new ScoreComponent(showCard.element, "score", "ul");
+      const showScore = new ScoreComponent(
+        showCard.element,
+        "score",
+        "ul",
+        () => {
+          this.showWatched(showCard.serie.id);
+        }
+      );
     });
   }
 
-  /* renderGentlemenList() {
-    const gentlemenContainer = this.element.querySelector(".gentlemen");
-    gentlemenContainer.innerHTML = "";
-    this.gentlemen.forEach((gentleman) => {
-      new GentlemanComponent(gentlemenContainer, "li", gentleman, () =>
-        this.toggleGentleman(gentleman.id)
+  renderWatchedSeries(watchedSeries) {
+    this.watchedSeries.forEach((serie) => {
+      const showCard = new CardComponent(
+        this.element.querySelector(".series-list--watched"),
+        "serie",
+        "li",
+        serie
       );
     });
-  } */
+  }
+
+  showWatched(id) {
+    let pendingCopy = [...this.pendingSeries];
+    const showWatched = pendingCopy.find((serie) => serie.id === id);
+    pendingCopy = pendingCopy.filter((serie) => serie.id !== id);
+    this.watchedSeries.push(showWatched);
+    this.pendingSeries = pendingCopy;
+    this.element.innerHTML = "";
+    this.generateHTML();
+    this.renderPendingSeries();
+    this.renderWatchedSeries();
+  }
 }

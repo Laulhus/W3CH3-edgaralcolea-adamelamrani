@@ -1,12 +1,15 @@
 import Component from "./Component.js";
 
 export default class ScoreComponent extends Component {
-  constructor(parentElement, className, htmlTag) {
+  starList;
+
+  constructor(parentElement, className, htmlTag, actionOnClick) {
     super(parentElement, "score", "ul");
 
     this.generateHTML();
     // this.addListeners(actionOnClick);
     this.displayEmptyStars();
+    this.addListeners(actionOnClick);
   }
 
   generateHTML() {
@@ -28,13 +31,15 @@ export default class ScoreComponent extends Component {
   }
 
   displayEmptyStars() {
-    const starList = this.element.querySelectorAll("i");
-    starList.forEach((star) => {
+    this.starList = this.element.querySelectorAll("i");
+    this.starList.forEach((star) => {
       star.style.fontWeight = 100;
     });
   }
 
   addListeners(actionOnClick) {
-    this.element.addEventListener("click", actionOnClick);
+    this.starList.forEach((star) => {
+      star.addEventListener("click", actionOnClick);
+    });
   }
 }
