@@ -1,0 +1,41 @@
+{
+  "name": "w3ch3-edgaralcolea-adamelamrani",
+  "version": "1.0.0",
+  "description": "",
+  "main": "series.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laulhus/W3CH3-edgaralcolea-adamelamrani.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laulhus/W3CH3-edgaralcolea-adamelamrani/issues"
+  },
+  "homepage": "https://github.com/Laulhus/W3CH3-edgaralcolea-adamelamrani#readme",
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "jest": "^27.4.7",
+    "husky": "^7.0.0"
+  },
+  "dependencies": {
+    "@types/jest": "^27.4.0",
+    "eslint-config-prettier": "^8.3.0"
+  }
+}
