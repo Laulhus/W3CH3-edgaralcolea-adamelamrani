@@ -1,5 +1,5 @@
-import Component from "./Component.js";
 import series from "../series.js";
+import Component from "./Component.js";
 
 export default class PageComponent extends Component {
   seriesList = series;
