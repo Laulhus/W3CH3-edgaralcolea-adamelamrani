@@ -1,6 +1,7 @@
 import series from "../series.js";
 import CardComponent from "./CardComponent.js";
 import Component from "./Component.js";
+import ScoreComponent from "./ScoreComponent.js";
 
 export default class PageComponent extends Component {
   pendingSeries = series;
@@ -36,12 +37,13 @@ export default class PageComponent extends Component {
 
   renderSeries(pendingSeries) {
     this.pendingSeries.forEach((serie) => {
-      new CardComponent(
+      const showCard = new CardComponent(
         this.element.querySelector(".series-list"),
         "serie",
         "li",
         serie
       );
+      const showScore = new ScoreComponent(showCard.element, "score", "ul");
     });
   }
 
