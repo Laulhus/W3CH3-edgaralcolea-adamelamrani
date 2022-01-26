@@ -1,24 +1,24 @@
+import series from "../series.js";
 import Component from "./Component.js";
 
-class CardComponent extends Component {
+export default class CardComponent extends Component {
   serie;
 
-  constructor(parentElement, htmlTag, serie) {
-    super(parentElement, htmlTag);
+  constructor(parentElement, className, htmlTag, serie) {
+    super(parentElement, className, htmlTag);
     this.serie = serie;
     this.generateHTML();
   }
 
   generateHTML() {
     this.element.innerHTML = `
-    <li class="serie">
                 <img
                   class="serie__poster"
-                  src="https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
+                  src=${this.serie.poster}
                   alt="${this.serie.name} poster"
                 />
                 <h4 class="serie__title">${this.serie.name}</h4>
-                <p class="serie__info">${this.series.creator} ${this.serie.year}</p>
+                <p class="serie__info">${this.serie.creator} (${this.serie.year})</p>
                 <ul class="score">
                   <li class="score__star">
                     <i class="icon--score fas fa-star" title="1/5"></i>
@@ -36,7 +36,6 @@ class CardComponent extends Component {
                     <i class="icon--score fas fa-star" title="5/5"></i>
                   </li>
                 </ul>
-                <i class="fas fa-times-circle icon--delete"></i>
-              </li>`;
+                <i class="fas fa-times-circle icon--delete"></i>`;
   }
 }
