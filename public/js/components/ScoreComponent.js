@@ -33,7 +33,7 @@ export default class ScoreComponent extends Component {
   displayEmptyStars() {
     this.starList = this.element.querySelectorAll("i");
     this.starList.forEach((star) => {
-      star.style.fontWeight = 100;
+      star.className = "icon--score far fa-star";
     });
   }
 

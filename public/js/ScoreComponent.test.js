@@ -7,7 +7,7 @@ describe("Given an ScoreComponent component", () => {
 
       new ScoreComponent(container);
 
-      expect(container.querySelector("ul")).not.toBe("null");
+      expect(container.querySelector("ul")).not.toBe(null);
     });
   });
 
