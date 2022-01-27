@@ -11,13 +11,14 @@ describe("Given an ScoreComponent component", () => {
     });
   });
 
-  describe("When clicked on", () => {
+  describe("When clicked on any of its childs", () => {
     test("It should call a function", () => {
       const container = document.createElement("div");
       const action = jest.fn();
 
-      const element = new ScoreComponent(container, action);
-      element.expect(action).toBeCalled();
+      const score = new ScoreComponent(container, action).starList;
+      score[0].click(action);
+      expect(action).toHaveBeenCalled();
     });
   });
 });
