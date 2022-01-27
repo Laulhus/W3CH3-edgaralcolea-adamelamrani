@@ -43,14 +43,9 @@ export default class PageComponent extends Component {
         "li",
         serie
       );
-      const showScore = new ScoreComponent(
-        showCard.element,
-        "score",
-        "ul",
-        () => {
-          this.showWatched(showCard.serie.id);
-        }
-      );
+      const showScore = new ScoreComponent(showCard.element, () => {
+        this.showWatched(showCard.serie.id);
+      });
     });
   }
 

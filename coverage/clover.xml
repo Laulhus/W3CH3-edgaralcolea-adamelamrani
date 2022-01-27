@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1643310663402" clover="3.2.0">
+  <project timestamp="1643310663402" name="All files">
+    <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7" elements="20" coveredelements="20" complexity="0" loc="13" ncloc="13" packages="1" files="2" classes="2"/>
+    <file name="Component.js" path="D:\Coding\ISDI Coders\Daily Challenges\Week 3\Challenge 3\public\js\components\Component.js">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+    </file>
+    <file name="ScoreComponent.js" path="D:\Coding\ISDI Coders\Daily Challenges\Week 3\Challenge 3\public\js\components\ScoreComponent.js">
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
+      <line num="35" count="2" type="stmt"/>
+      <line num="36" count="10" type="stmt"/>
+      <line num="41" count="2" type="stmt"/>
+      <line num="42" count="10" type="stmt"/>
+    </file>
+  </project>
+</coverage>
