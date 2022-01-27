@@ -6,6 +6,7 @@ import ScoreComponent from "./ScoreComponent.js";
 export default class PageComponent extends Component {
   pendingSeries = series;
   watchedSeries = [];
+  removedSeries = series;
   constructor(parentElement) {
     super(parentElement, "main", "main");
 

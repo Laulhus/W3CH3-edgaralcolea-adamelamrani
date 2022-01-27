@@ -12,6 +12,7 @@ module.exports = {
   },
   rules: {
     "import/extensions": "off",
+    "no-new": "off",
     "no-plusplus": "off",
     "no-restricted-syntax": "off",
     "lines-between-class-members": [

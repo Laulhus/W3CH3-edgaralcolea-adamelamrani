@@ -1,13 +1,9 @@
 import Component from "./Component.js";
 
 export default class DeleteButton extends Component {
-  constructor(parentElement, className, actionOnClick) {
-    super(parentElement, className);
+  constructor(parentElement) {
+    super(parentElement);
 
-    this.addListeners(actionOnClick);
-  }
-
-  addListeners(actionOnClick) {
-    this.element.addEventListener("click", actionOnClick);
+    this.addListener();
   }
 }
