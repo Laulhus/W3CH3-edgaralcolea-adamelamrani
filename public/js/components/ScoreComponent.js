@@ -3,7 +3,7 @@ import Component from "./Component.js";
 export default class ScoreComponent extends Component {
   starList;
 
-  constructor(parentElement, className, htmlTag, actionOnClick) {
+  constructor(parentElement, actionOnClick) {
     super(parentElement, "score", "ul");
 
     this.generateHTML();
